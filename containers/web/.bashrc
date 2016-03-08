@@ -1,0 +1,12 @@
+# aliases 
+alias back='cd $OLDPWD'
+alias ls='ls -CF'
+alias ll='ls -l'
+alias la='ls -a'
+alias lal='ls -al'
+alias lnew='ls -alt | head -16'
+alias rm='rm -i'
+alias h='history'
+alias c='/usr/ucb/clear'
+alias df='df -k'
+alias du='du -k'

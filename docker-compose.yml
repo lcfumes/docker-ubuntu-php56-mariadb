@@ -1,0 +1,21 @@
+web-movitra:
+    build: "./containers/web/"
+    ports:
+        - "80:80"
+    environment:
+       - VIRTUAL_HOST=webproject.dev
+    volumes:
+       - ../:/srv/webproject
+    links:
+       - db-movitra:database.dev
+
+db-movitra:
+    image: mariadb:latest
+    environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - VIRTUAL_HOST=database.dev
+    volumes:
+        - ./tmp/mysql:/var/lib/mysql
+        - ./containers/database/my.cnf:/etc/mysql/conf.d/custom.cnf
+    ports:
+        - "3306:3306"
